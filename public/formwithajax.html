@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script  type= "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	
+</head>	
+<body>
+	<form>
+		first Name:<input type="text" name="fname"><br>
+		last Name:<input type="text" name="lname"><br>
+		city:<select name="city">
+				<option value="nj" name="nj">nj</option>
+				<option value="ny" name="ny">ny</option>
+			</select><br>
+			<button>submit</button>
+	</form>
+	<div id="div1">
+
+	</div>
+	<script>
+		$(document).ready(function(){
+				
+			$("button").click(function(event){
+			event.preventDefault();
+		
+				var fname1=$("input[name=fname]").val();
+				var lname1=$("input[name=lname]").val();
+				var city1=$("select[name=city]").val();
+					$.ajax({
+						url:"/users",
+						type:"POST",
+						data:{fname1,
+							  lname1,
+							  city1
+							 },
+						success:function(data){
+							$("#div1").append('my first name :'+data.fname1+'<br>'+'last name :'+data.lname1+'<br>'+'and city :'+data.city1+'<br>'+'myid'+data.id);
+						}	
+					});
+			});
+		});
+	</script>
+</body>
+</html>
