@@ -21,11 +21,13 @@
 	<script>
 		$(document).ready(function(){
 				$.ajax({
-						url:"/users",
+						url:"/users/",
 						type:"GET",
 						success:function(data){
-							for(var i=0;i<=data.length;i++){
+							for(var i=0;i<data.length;i++){
+								console.log(data[i]);
 								$("#div1").append('<br>'+'my first name :'+data[i].fname1+'<br>'+'last name :'+data[i].lname1+'<br>'+'and city :'+data[i].city1+'<br>'+'myid'+data[i].id+'<br>');
+								//$("#div1").append('my first name:'mydata[i].);
 							}
 						}						
 					});
