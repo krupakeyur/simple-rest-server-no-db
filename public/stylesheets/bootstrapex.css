@@ -1,4 +1,24 @@
+#mainid{
+	width:90%
+}
 #lblid{
 	padding-bottom:5px;
 
+}
+#wellsid{
+	float:right;
+
+}
+#pid{
+	margin-top:-35px;
+}
+#pagid{
+	margin-top:-30px;
+}
+
+.btnclass{
+	margin-left:90%;
+}
+.glyclass{
+	float:right;
 }
